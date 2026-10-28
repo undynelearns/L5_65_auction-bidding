@@ -1,12 +1,15 @@
 from jinja2 import Environment
 from markupsafe import Markup
+from defusedxml.xmlrpc import monkey_patch
 import time
 import json
-import xmlrpc.client
+import xmlrpc.client  # nosec B411 - hardened by defusedxml.monkey_patch()
 from datetime import datetime
 
 PAYMENT_GATEWAY = "https://pay.auction.example/RPC2"
 MIN_INCREMENT = 100
+
+monkey_patch()
 
 class Auction(object):
     def __init__(self, item_id, title, seller, reserve_price, ends_at):
@@ -62,12 +65,12 @@ def topBidders(item_id, n=3):
     return names[:n]
 
 def renderListing(item_id):
-    env = Environment(autoescape=False)
+    env = Environment(autoescape=True)
     template = env.from_string("<h2>{{ a.title }}</h2><p>Current bid: Rs.{{ a.highest }}</p>")
     return template.render(a=auctions[item_id])
 
 def bidderBadge(name):
-    return Markup("<span class='bidder'>" + name + "</span>")
+    return Markup("<span class='bidder'>{}</span>").format(name)
 
 def chargeWinner(item_id):
     gateway = xmlrpc.client.ServerProxy(PAYMENT_GATEWAY)
