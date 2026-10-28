@@ -1,0 +1,19 @@
+auction_system.py:11:1: E302 expected 2 blank lines, found 1
+auction_system.py:43:1: E302 expected 2 blank lines, found 1
+auction_system.py:47:1: E302 expected 2 blank lines, found 1
+auction_system.py:53:1: E302 expected 2 blank lines, found 1
+auction_system.py:64:1: E302 expected 2 blank lines, found 1
+auction_system.py:66:80: E501 line too long (94 > 79 characters)
+auction_system.py:69:1: E302 expected 2 blank lines, found 1
+auction_system.py:72:1: E302 expected 2 blank lines, found 1
+auction_system.py:77:1: E302 expected 2 blank lines, found 1
+auction_system.py:83:1: E302 expected 2 blank lines, found 1
+auction_system.py:88:1: E302 expected 2 blank lines, found 1
+auction_system.py:89:80: E501 line too long (83 > 79 characters)
+auction_system.py:90:80: E501 line too long (109 > 79 characters)
+auction_system.py:93:80: E501 line too long (87 > 79 characters)
+auction_system.py:94:80: E501 line too long (81 > 79 characters)
+auction_system.py:95:80: E501 line too long (90 > 79 characters)
+auction_system.py:96:80: E501 line too long (94 > 79 characters)
+auction_system.py:101:80: E501 line too long (88 > 79 characters)
+auction_system.py:107:1: E305 expected 2 blank lines after class or function definition, found 1
